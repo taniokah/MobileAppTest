@@ -11,6 +11,20 @@
   </head>
 
   <body>
+    <script>
+      if ('speechSynthesis' in window) {
+        alert("このブラウザは音声合成に対応しています。🎉")
+        
+        // 発言を作成
+        const uttr = new SpeechSynthesisUtterance("Hello World!")
+        // 発言を再生 (発言キューに発言を追加)
+        speechSynthesis.speak(uttr)
+        
+    } else {
+        alert("このブラウザは音声合成に対応していません。😭")
+      }
+    </script>
+
     <h1 class="text-center h1">Web Speech API テスト</h1>
     <div id="content">
       <input type="textarea" id="q" name="q" size=60>
